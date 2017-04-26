@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+  </head>
+  <body>
+
+  </body>
+  <script>
+
+  //Q: Where were you on the night of the 24th
+  //A: In the living room with the candle holder
+  //Q: Why were you there?
+  //A: Because that's where I stopped walking.
+  //Q: What were you doing with the candle holder
+  //A: I was looking around in the dark
+  //Q: It's not 1912, why didn't you use a flashlight?
+  //A: I don't believe in flashlights.
+
+
+// var story = [{question,answers: [{}]},{question,answers:[{}]}]
+
+  var story = [
+    {
+      question: "Where were you on the night of the 24th?",
+      answers: [
+        {
+          answer: function(){
+            var place = prompt("Place?");
+            var thing = prompt("Thing?");
+
+            return "In the "+ place +" with the " + thing;
+          },
+          chance: 0.5
+        },
+        {
+          answer: function(){return "At home"},
+          chance: 0.25
+        },
+        {
+          answer: function(){return "Nunya"},
+          chance: 0.25
+        }
+      ]
+    },
+
+    //Q: Why were you there?
+    //A: Because that's where I stopped walking.
+
+    {
+      question: "Why were you there?",
+      answers: [
+        {
+          answer: function(){return "Because that's where I stopped walking."},
+          chance: 0.75
+        },
+        {
+          answer: function(){return "Nunya"},
+          chance: 0.25
+        }
+      ]
+    }
+
+  ];
+
+  function tellStory(){
+    var current_line = 0;
+
+    while(current_line < story.length){
+          alert(story[current_line].question);
+
+          for(var i = 0; i < story[current_line].answers.length; i++){
+            if(Math.random() < story[current_line].answers[i].chance){
+              alert(story[current_line].answers[i].answer());
+              break;
+            }else if(i == story[current_line].answers.length-1){
+              alert("I have nothing to say to you!");
+            }
+          }
+
+      current_line++;
+    }
+  }
+
+  tellStory();
+
+  </script>
+</html>
