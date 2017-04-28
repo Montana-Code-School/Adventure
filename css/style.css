@@ -1,0 +1,31 @@
+body {
+  background-color: tomato;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  /*flex-direction: row;*/
+  justify-content: space-around;
+  border: 1px solid black;
+}
+
+.box {
+  flex-direction: row;
+  flex:1;
+  border: 1px solid black;
+  p
+}
+
+.currentQuestion {
+  flex-direction: column;
+  padding-left: 2em;
+}
+
+.convoRecord {
+  flex-direction: column;
+  padding-left: 2em;
+}
