@@ -76,38 +76,10 @@
     {
       label:"q5",
       question:'Congratulations on your incredible hygiene. You are not the murderer.',
-      // answers: [
-      //   {
-      //     text: "Showering",
-      //     next: "q#"
-      //   },
-      //   {
-      //     text: "Watching Tom and Jerry",
-      //     next: "q#"
-      //   },
-      //   {
-      //     text:"Plotting a murder",
-      //     next: "q#"
-      //   }]
-
     },
     {
       label:"q6",
       question:'Ah sweet. I love Boomerang. Have a donut.',
-      // answers: [
-      //   {
-      //     text: "Math",
-      //     next: "q#"
-      //   },
-      //   {
-      //     text: "French",
-      //     next: "q#"
-      //   },
-      //   {
-      //     text:"In the hallway eating chicken",
-      //     next: "q#"
-      //   }]
-
     },
     {
       label:"q7",
@@ -146,7 +118,16 @@
     },
     {
       label: "q11",
-      
+      question: "*maniacal laughter*",
+    },
+    {
+      label: "q12",
+      question: "Oh no not Swaggy P, You are under arrest!"
+    },
+    {
+      label: "q13",
+      question: "Word up"
+
     }
 
   ];
