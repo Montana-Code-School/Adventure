@@ -26,21 +26,16 @@
       question: "Where were you on the night of the 24th?",
       answers: [
         {
-          answer: function(){
-            var place = prompt("Place?");
-            var thing = prompt("Thing?");
-
-            return "In the "+ place +" with the " + thing;
-          },
-          chance: 0.5
+          answer: function(){return "In the bathroom with a toothbrush!"},
+          label: "a"
         },
         {
           answer: function(){return "At home"},
-          chance: 0.25
+          label: "b"
         },
         {
           answer: function(){return "Nunya"},
-          chance: 0.25
+          label: "c"
         }
       ]
     },
@@ -50,6 +45,7 @@
 
     {
       question: "Why were you there?",
+      label: "b",
       answers: [
         {
           answer: function(){return "Because that's where I stopped walking."},
@@ -61,29 +57,51 @@
         }
       ]
     }
-
   ];
 
+  // function findMyLabel(label) {
+  //   for (key in story[0].answers) {
+  //     console.log(key);
+  //
+  //   }
+  // }
+
   function tellStory(){
-    var current_line = 0;
+    // var current_line = 0;
+    //
+    // while(current_line < story.length){
+    //       alert(story[current_line].question);
+    //
+    //       for(var i = 0; i < story[current_line].answers.length; i++){
+    //         if(Math.random() < story[current_line].answers[i].chance){
+    //           alert(story[current_line].answers[i].answer());
+    //           break;
+    //         }else if(i == story[current_line].answers.length-1){
+    //           alert("I have nothing to say to you!");
+    //         }
+    //       }
+    //
+    //   current_line++;
+    // }
 
-    while(current_line < story.length){
-          alert(story[current_line].question);
+    
 
-          for(var i = 0; i < story[current_line].answers.length; i++){
-            if(Math.random() < story[current_line].answers[i].chance){
-              alert(story[current_line].answers[i].answer());
-              break;
-            }else if(i == story[current_line].answers.length-1){
-              alert("I have nothing to say to you!");
-            }
-          }
+    alert(story[0].question);
 
-      current_line++;
-    }
+    switch(story[0].answers.label) {
+    case "a":
+        alert(story.question.label[a])
+        break;
+    case "b":
+    alert(story.question.label[b])
+        break;
+    default:
+        alert("you suck")
+}
   }
 
-  tellStory();
-
+  // tellStory();
+window.findMyLabel = findMyLabel;
+window.story = story;
   </script>
 </html>
