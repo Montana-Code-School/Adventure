@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Mystery Adventure</title>
     <link rel="stylesheet" type="text/css" href="css/style.css"></link>
+    <script src="storytime.js" type="text/javascript"></script>
   </head>
   <body>
     <h1>Mystery Adventure</h1>
@@ -34,81 +35,71 @@
 
   <script>
 
-  //Q: Where were you on the night of the 24th
-  //A: In the living room with the candle holder
-  //Q: Why were you there?
-  //A: Because that's where I stopped walking.
-  //Q: What were you doing with the candle holder
-  //A: I was looking around in the dark
-  //Q: It's not 1912, why didn't you use a flashlight?
-  //A: I don't believe in flashlights.
 
+var userInput=prompt(story[0].question);
+// var next="";
+// var label="";
+// var i=0;
+var currentLine = 0;
 
-// var story = [{question,answers: [{}]},{question,answers:[{}]}]
+if (currentLine < story.length) {
+  for (var i = 0; i < story[currentLine].answers.length; i++)
+    if (userInput == story[currentLine].answers[i].text) {
+      for (var j = 0; j < story.length; j++) {
+        if (story[currentLine].answers[i].next == story[j].label)
+        prompt(story[j].question);
+      // console.log(story[currentLine].answers[i].next);
 
-  var story = [
-    {
-      question: "Where were you on the night of the 24th?",
-      answers: [
-        {
-          answer: function(){
-            var place = prompt("Place?");
-            var thing = prompt("Thing?");
+    };
 
-            return "In the "+ place +" with the " + thing;
-          },
-          chance: 0.5
-        },
-        {
-          answer: function(){return "At home"},
-          chance: 0.25
-        },
-        {
-          answer: function(){return "Nunya"},
-          chance: 0.25
-        }
-      ]
-    },
-
-    //Q: Why were you there?
-    //A: Because that's where I stopped walking.
-
-    {
-      question: "Why were you there?",
-      answers: [
-        {
-          answer: function(){return "Because that's where I stopped walking."},
-          chance: 0.75
-        },
-        {
-          answer: function(){return "Nunya"},
-          chance: 0.25
-        }
-      ]
-    }
-
-  ];
-
-  function tellStory(){
-    var current_line = 0;
-
-    while(current_line < story.length){
-          alert(story[current_line].question);
-
-          for(var i = 0; i < story[current_line].answers.length; i++){
-            if(Math.random() < story[current_line].answers[i].chance){
-              alert(story[current_line].answers[i].answer());
-              break;
-            }else if(i == story[current_line].answers.length-1){
-              alert("I have nothing to say to you!");
-            }
-          }
-
-      current_line++;
-    }
   }
 
-//  tellStory();
+}
+
+//
+// switch(userInput) {
+//   case story[0].answers[0].text:
+//   // userInput=prompt(story[1].question;
+//   next = story[i].label;
+//   break;
+//   case "School" :
+//   console.log("you chose school");
+//   break;
+//   default:
+//   console.log("you must be at Church's chicken!");
+//
+// }
+// for (var i = 0; i < story.length; i++) {
+// for (key in story[i].answers) {
+//     // if (story[i].answers.next == story[i].label);
+//     // console.log("You are AMAZING!");
+// console.log(story[i].answers[i].text);
+//   }
+
+// }
+
+
+  // function tellStory(){
+  //   var current_line = 0;
+  //
+  //   while(current_line < story.length){
+  //         alert(story[current_line].question);
+  //
+  //         for(var i = 0; i < story[current_line].answers.length; i++){
+  //           if(Math.random() < story[current_line].answers[i].chance){
+  //             alert(story[current_line].answers[i].answer());
+  //             break;
+  //           }else if(i == story[current_line].answers.length-1){
+  //             alert("I have nothing to say to you!");
+  //           }
+  //         }
+  //
+  //     current_line++;
+  //   }
+  // }
+  //
+  // tellStory();
+
 
   </script>
 </html>
